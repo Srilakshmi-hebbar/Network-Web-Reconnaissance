@@ -72,5 +72,3 @@ This project provided practical exposure to the information-gathering stage of c
 ## 8. Project Documentation
 The detailed assessment report and practical screenshots are included in this repository.
 
-## Disclaimer
-This project was performed for educational purposes. Reconnaissance activities should only be conducted against systems for which explicit authorization has been obtained.
