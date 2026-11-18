@@ -1,0 +1,76 @@
+
+# Commands Used – Network Reconnaissance
+
+## 1. Network Information Gathering
+
+### Display IP Address
+```bash
+hostname -I
+```
+Displays the IP address assigned to the system.
+
+### Display Network Interfaces
+```bash
+ip addr
+```
+Displays available network interfaces and their IP configurations.
+
+### Display Routing Table
+```bash
+ip route
+```
+Displays the system's routing information.
+
+### Check Network Connectivity
+```bash
+ping -c 4 <gateway>
+```
+Checks connectivity with the specified gateway.
+
+### View DNS Configuration
+```bash
+cat /etc/resolv.conf
+```
+Displays configured DNS resolver information.
+
+### DNS Lookup
+```bash
+nslookup example.com
+```
+Queries DNS records for a domain.
+
+## 2. Web Directory Enumeration
+
+```bash
+gobuster dir -u http://<LAB-IP>/ -w /usr/share/wordlists/dirb/common.txt
+```
+
+Used to discover directories and files on an authorized lab web server.
+
+## 3. Subdomain Enumeration
+
+```bash
+subfinder -d example.com -o subdomains.txt
+```
+
+Used to identify subdomains of the selected domain.
+
+## 4. Remove Duplicate Subdomains
+
+```bash
+sort -u subdomains.txt -o subdomains_unique.txt
+```
+
+Removes duplicate entries from the collected subdomain list.
+
+## 5. DNS Resolution
+
+```bash
+dnsx -l subdomains_unique.txt -o resolved.txt
+```
+
+Checks which discovered subdomains resolve through DNS.
+
+## Disclaimer
+
+All reconnaissance activities should be performed only on systems and domains for which permission has been granted. Replace example.com and <LAB-IP> with the actual authorized lab target where applicable.
